@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Base: recomendado para consistencia */
+html, body {
+    height: 100%;
+}
