@@ -1,36 +1,93 @@
-<header class="sticky top-0 z-40 border-b border-white/10 bg-zinc-950/60 backdrop-blur-xl">
+<header class="sticky top-0 z-40 border-b border-black/8 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/60">
     <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
 
-        <!-- Logo y nobre -->
+        <!-- Logo y nombre -->
         <div class="flex items-center gap-3">
-            <a href="#hero" class="flex items-center gap-3">
-                <img src="./logo.png" alt="kam" class="h-9 w-9 rounded-xl object-contain ring-1 ring-white/10">
-                <div class="leading-tight">
-                    <p class="text-sm font-semibold text-zinc-100">
-                        Kenny Armas
-                    </p>
-                    <p class="text-xs text-zinc-400">
-                        Web Developer
-                    </p>
-                </div>
-            </a>
+          <a href="#hero" class="flex items-center gap-3">
+            <img src="/logo.png" alt="kam" class="h-9 w-9 rounded-xl object-contain ring-1 ring-white/10">
+                
+            <div class="leading-tight">
+              <p class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Kenny Armas</p>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400">Web Developer</p>
+              </div>
+          </a>
         </div>
 
         <!-- Navegacion desktop -->
         <nav class="hidden items-center gap-2 md:flex">
-            <a href="#about-me" class="nav-link">Sobre mí</a>
-            <a href="#skills" class="nav-link">Habilidades</a>
-            <a href="#projects" class="nav-link">Proyectos</a>
-            <a href="#experience" class="nav-link">Experiencia</a>
-            <a href="#certifications" class="nav-link">Certificaciones</a>
+          <a href="#about-me" class="nav-link">Sobre mí</a>
+          <a href="#skills" class="nav-link">Habilidades</a>
+          <a href="#projects" class="nav-link">Proyectos</a>
+          <a href="#experience" class="nav-link">Experiencia</a>
+          <a href="#certifications" class="nav-link">Certificaciones</a>
         </nav>
 
-        <!-- CTA -->
-        <a href="#contact" class="hidden md:inline-flex rounded-xl bg-gradient-to-tr from-violet-500 via-cyan-400 to-emerald-400 px-4 py-2 text-sm font-semibold text-zinc-950 shadow-lg transition hover:scale-[1.02]">
-            Contactar
-        </a>
+        <!-- Right buttons -->
+        <div class="flex items-center gap-3">
+          <!-- Theme Toggle -->
+                  
+          <div
+              id="themeToggle"
+              class="relative hidden h-12 w-[170px] items-center rounded-full border border-black/8 bg-white/70 p-1 shadow-[0_8px_30px_rgba(0,0,0,0.10)] backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/60 dark:shadow-[0_8px_30px_rgba(0,0,0,0.25)] md:flex"
+              role="button"
+              tabindex="0"
+              aria-label="Theme"
+              aria-pressed="true"  
+            >
+              <!-- Sliding background -->
+              <div 
+                id="themeThumb"
+                class="absolute left-1 top-1 h-10 w-[80px] rounded-full bg-slate-700/90 transition-all duration-300 ease-out">
+              </div>
 
+              <!-- Dark button -->
+              <button
+                id="darkBtn"
+                type="button"
+                class="theme-option relative z-10 flex h-10 w-[80px] cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-semibold text-white transition-colors duration-300"
+                data-theme="dark">
+                <svg width="28" height="28" class="fill-current drop-shadow-[0_0_6px_rgba(34,211,238,0.55)]">
+                  <use xlink:href="../public/assets/sprite.svg#moon"></use>   
+                </svg> 
+                <span>Dark</span>
+              </button>
 
+              <!-- Light button -->
+              <button
+                id="lightBtn"
+                type="button"
+                class="theme-option relative z-10 flex h-10 w-[80px] cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-semibold text-zinc-400 transition-colors duration-300"
+                data-theme="light">
+                <svg width="28" height="28" class="fill-current drop-shadow-[0_0_6px_rgba(34,211,238,0.55)]">
+                  <use xlink:href="../public/assets/sprite.svg#sun"></use>   
+                </svg> 
+                <span>Light</span>
+              </button>                    
+            </div>
+
+            <!-- CTA -->
+            <a 
+              href="#contact"
+                      class="hidden md:inline-flex rounded-xl bg-gradient-to-tr from-violet-500 via-cyan-400 to-emerald-400 px-4 py-2 text-sm font-semibold text-zinc-950 shadow-lg transition hover:scale-[1.02]">
+              Contactar
+            </a>
+
+            <!-- Botón mobile -->
+            <button
+              class="md:hidden rounded-xl bg-white/5 p-2 ring-1 ring-white/10"
+              aria-label="Abrir menú"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>                  
+        </div>
     </div>
 
 </header>
