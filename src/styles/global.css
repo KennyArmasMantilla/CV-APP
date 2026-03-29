@@ -28,4 +28,25 @@ body {
 
 .value {
   @apply mt-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100;
+
+.hscroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(120, 120, 120, 0.35) transparent;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.hscroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.hscroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hscroll::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.35);
+  border-radius: 999px;
+}  
+
 }
