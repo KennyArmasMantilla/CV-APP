@@ -1,10 +1,20 @@
-<header class="fixed inset-x-0 top-0 z-50 border-b border-black/8 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/60">
+<header id="top" class="fixed inset-x-0 top-0 z-50 border-b border-black/8 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/60">
     <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
 
         <!-- Logo y nombre -->
         <div class="flex items-center gap-3">
-          <a href="#hero" class="flex items-center gap-3">
-            <img src="/logo.png" alt="kam" class="h-9 w-9 rounded-xl object-contain ring-1 ring-white/10">
+          <a href="#hero" class="group inline-flex items-center gap-3 rounded-xl px-2 py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
+            
+            <span
+                class="relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-2xl bg-white/80 ring-1 ring-black/10 transition group-hover:bg-white dark:bg-white/5 dark:ring-white/10 dark:group-hover:bg-white/10"
+                aria-hidden="true"
+              >
+              <span
+                  class="absolute inset-0 bg-linear-to-tr from-violet-500/20 via-cyan-400/10 to-emerald-400/10"
+                ></span>
+              <img src="/logo.png" alt="kam" class="relative h-9 w-9 object-contain drop-shadow-[0_0_18px_rgba(34,211,238,0.35)]" loading="eager">
+
+            </span>
                 
             <div class="leading-tight">
               <p class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Kenny Armas</p>
@@ -14,7 +24,7 @@
         </div>
 
         <!-- Navegacion desktop -->
-        <nav class="hidden items-center gap-2 md:flex">
+        <nav class="hidden items-center gap-2 md:flex" aria-label="Navegación principal">
           <a href="#about-me" class="nav-link">Sobre mí</a>
           <a href="#skills" class="nav-link">Habilidades</a>
           <a href="#projects" class="nav-link">Proyectos</a>
@@ -32,8 +42,7 @@
               role="button"
               tabindex="0"
               aria-label="Theme"
-              aria-pressed="true"  
-            >
+              aria-pressed="true">
               <!-- Sliding background -->
               <div 
                 id="themeThumb"
@@ -63,31 +72,56 @@
                 </svg> 
                 <span>Light</span>
               </button>                    
-            </div>
+          </div>
 
-            <!-- CTA -->
-            <a 
-              href="#contact"
-                      class="hidden md:inline-flex rounded-xl bg-linear-to-tr from-violet-500 via-cyan-400 to-emerald-400 px-4 py-2 text-sm font-semibold text-zinc-950 shadow-lg transition hover:scale-[1.02]">
-              Contactar
-            </a>
+          <!-- CTA -->
+          <a 
+            href="#contact"
+            class="hidden md:inline-flex rounded-xl bg-linear-to-tr 
+            from-violet-500 via-cyan-400 to-emerald-400 px-4 py-2 text-sm font-semibold text-zinc-950 shadow-lg transition hover:scale-[1.02]">
+            Contactar
+          </a>
 
-            <!-- Botón mobile -->
-            <button
-              class="md:hidden rounded-xl bg-white/5 p-2 ring-1 ring-white/10"
-              aria-label="Abrir menú"
+          <!-- Botón mobile -->
+          <button
+            id="mobileMenuBtn"
+            type="button"
+            class="inline-flex items-center justify-center rounded-xl bg-white/80 p-2 text-zinc-800 ring-1 ring-black/10 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:bg-white/5 dark:text-zinc-200 dark:ring-white/10 dark:hover:bg-white/10 md:hidden"
+            aria-label="Abrir menú"
+            aria-controls="mobileMenu"
+            aria-expanded="false">
+            <span class="sr-only">Abrir menú</span>
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="h-5 w-5 fill-none stroke-current"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 stroke-current"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-              >
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>                  
+              <use xlink:href="../public/assets/sprite.svg#menu"></use>
+            </svg>
+          </button>                  
         </div>
     </div>
+
+    <!-- Mobile menu -->
+  <div
+    id="mobileMenu"
+    class="hidden border-t border-black/10 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/80 md:hidden"
+  >
+    <nav
+      class="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 sm:px-6"
+      aria-label="Navegación móvil"
+    >
+      <a href="#about-me" class="nav-link">Sobre mí</a>
+      <a href="#skills" class="nav-link">Habilidades</a>
+      <a href="#projects" class="nav-link">Proyectos</a>
+      <a href="#experience" class="nav-link">Experiencia</a>
+      <a href="#certifications" class="nav-link">Certificaciones</a>
+      <a href="#contact" class="nav-link">Contacto</a>
+    </nav>
+  </div>
 
 </header>
