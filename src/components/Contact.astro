@@ -1,0 +1,148 @@
+<section
+  id="contact"
+  class="scroll-mt-24 border-t border-black/10 py-14 dark:border-white/10 sm:py-18"
+  aria-label="Contacto"
+>
+  <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+    <div>
+      <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+        Contacto
+      </h2>
+      <p class="mt-2 max-w-xl text-pretty text-zinc-500 dark:text-zinc-400">
+        Puedes escribirme por correo o por LinkedIn.
+      </p>
+
+      <div class="mt-6 grid gap-3">
+        <a
+          href="mailto:kenny.armas@gmail.com"
+          class="rounded-2xl bg-white/70 p-4 ring-1 ring-black/10 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:bg-white/5 dark:ring-white/10 dark:hover:bg-white/10"
+        >
+          <p class="text-xs text-zinc-500 dark:text-zinc-500">Email</p>
+          <p class="mt-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            kenny.armas@gmail.com
+          </p>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/kenny-armas-mantilla/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-2xl bg-white/70 p-4 ring-1 ring-black/10 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:bg-white/5 dark:ring-white/10 dark:hover:bg-white/10"
+        >
+          <p class="text-xs text-zinc-500 dark:text-zinc-500">LinkedIn</p>
+          <p class="mt-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            linkedin.com/in/kenny-armas-mantilla
+          </p>
+        </a>
+
+        <div class="rounded-2xl bg-white/70 p-4 ring-1 ring-black/10 dark:bg-white/5 dark:ring-white/10">
+          <p class="text-xs text-zinc-500 dark:text-zinc-500">Teléfono</p>
+          <p class="mt-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            902 296 547
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-3xl bg-white/70 p-6 ring-1 ring-black/10 backdrop-blur-xl dark:bg-white/5 dark:ring-white/10">
+      <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        Envíame un mensaje (sin backend)
+      </h3>
+
+      <form
+        id="contactForm"
+        class="mt-5 space-y-4"
+        aria-label="Formulario de contacto"
+        novalidate
+      >
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="name" class="text-sm text-zinc-700 dark:text-zinc-300">
+              Nombre
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+              class="mt-2 w-full rounded-2xl bg-white/80 px-4 py-3 text-sm text-zinc-900 ring-1 ring-black/10 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 dark:bg-zinc-950/40 dark:text-zinc-100 dark:ring-white/10"
+              placeholder="Ej: Reclutador / Equipo"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="text-sm text-zinc-700 dark:text-zinc-300">
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              class="mt-2 w-full rounded-2xl bg-white/80 px-4 py-3 text-sm text-zinc-900 ring-1 ring-black/10 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 dark:bg-zinc-950/40 dark:text-zinc-100 dark:ring-white/10"
+              placeholder="Ej: equipo@empresa.com"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="topic" class="text-sm text-zinc-700 dark:text-zinc-300">
+            Motivo
+          </label>
+          <select
+            id="topic"
+            name="topic"
+            class="mt-2 w-full rounded-2xl bg-white/80 px-4 py-3 text-sm text-zinc-900 ring-1 ring-black/10 focus:outline-none focus:ring-2 focus:ring-cyan-400 dark:bg-zinc-950/40 dark:text-zinc-100 dark:ring-white/10"
+          >
+            <option value="">Selecciona una opción</option>
+            <option>Oportunidad laboral</option>
+            <option>Consulta técnica</option>
+            <option>Referencias / networking</option>
+            <option>Otro</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" class="text-sm text-zinc-700 dark:text-zinc-300">
+            Mensaje
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            class="mt-2 w-full resize-none rounded-2xl bg-white/80 px-4 py-3 text-sm text-zinc-900 ring-1 ring-black/10 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 dark:bg-zinc-950/40 dark:text-zinc-100 dark:ring-white/10"
+            placeholder="Escribe el contexto y el siguiente paso (entrevista, info técnica, etc.)."
+          ></textarea>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <button
+            type="submit"
+            class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-tr from-violet-500/80 via-cyan-400/80 to-emerald-400/80 px-5 py-3 text-sm font-semibold text-zinc-950 shadow-[0_16px_60px_rgba(34,211,238,0.16)] transition hover:translate-y-[-1px] hover:shadow-[0_18px_70px_rgba(34,211,238,0.22)] focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+          >
+            Enviar mensaje
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="h-4 w-4 fill-none stroke-current"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M22 2 11 13" />
+              <path d="M22 2 15 22l-4-9-9-4Z" />
+            </svg>
+          </button>
+
+          <p id="formStatus" class="text-sm text-zinc-500 dark:text-zinc-400" aria-live="polite">
+            Respuesta automática (placeholder) al enviar.
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

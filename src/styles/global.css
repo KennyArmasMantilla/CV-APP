@@ -54,3 +54,25 @@ body {
 .skill-chip {
   @apply rounded-full bg-white/80 px-3 py-1 text-xs text-zinc-700 ring-1 ring-black/10 dark:bg-white/5 dark:text-zinc-200 dark:ring-white/10;
 }
+
+.timeline-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(120, 120, 120, 0.35) transparent;
+}
+
+.timeline-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.timeline-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.35);
+  border-radius: 999px;
+}
+
+.cert-pill {
+  @apply inline-flex rounded-full bg-white/80 px-3 py-1 text-xs text-zinc-700 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:text-zinc-200 dark:ring-white/10;
+}
