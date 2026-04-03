@@ -7,13 +7,13 @@
         <div>
             <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">Sobre mí</h2>
 
-            <p class="mt-4 text-pretty text-zinc-700 dark:text-zinc-300">
+            <p class="mt-4 text-pretty text-soft">
                 Soy una persona activa y dinámica de gusto especial por el trabajo.
                 He trabajado en el desarrollo de aplicaciones Web y de escritorio,
                 bajo marcos de trabajo Scrum.
             </p>
 
-            <p class="mt-3 text-pretty text-zinc-500 dark:text-zinc-400">
+            <p class="mt-3 text-pretty text-muted">
                 Me caracterizo por mi organización, trabajo en equipo y proactividad,
                 logrando metas y objetivos con facilidad de adaptación al cambio y
                 aprendizaje constante.
@@ -23,13 +23,13 @@
         <!-- Right: Contact/service combos -->
         <aside class="space-y-4" aria-label="Datos">
             <div class="rounded-3xl bg-linear-to-tr from-violet-500/20 via-cyan-400/10 to-emerald-400/10 p-px">
-                <div class="rounded-3xl bg-white/70 p-6 ring-1 ring-black/10 backdrop-blur-xl dark:bg-white/5 dark:ring-white/10">
+                <div class="card-surface p-6 ">
 
                     <div class="flex items-center justify-between gap-3">
                         <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
                             Datos de contacto
                         </h3>
-                        <span class="flex gap-2 rounded-full bg-white/80 px-3 py-1 font-mono text-[11px] text-zinc-700 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:text-zinc-300 dark:ring-white/10">
+                        <span class="card-badge">
                             <span class="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-emerald-300" aria-hidden="true"></span>
                             Disponible
                         </span>
@@ -37,25 +37,25 @@
                     </div>
 
                     <div class="mt-5 grid gap-3 sm:grid-cols-3">
-                        <div class="rounded-2xl bg-white/80 p-4 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-                            <p class="text-xs text-zinc-500 dark:text-zinc-400">Teléfono</p>                        
+                        <div class="card-block">
+                            <p class="text-xs text-muted">Teléfono</p>                        
                             <p class="mt-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100">902 296 547</p>                        
                         </div>
 
-                        <div class="rounded-2xl bg-white/80 p-4 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-                            <p class="text-xs text-zinc-500 dark:text-zinc-400">Email</p>                        
+                        <div class="card-block">
+                            <p class="text-xs text-muted">Email</p>                        
                             <p class="mt-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100">kenny.armas@gmail.com</p>                        
                         </div>
 
-                        <div class="rounded-2xl bg-white/80 p-4 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-                            <p class="text-xs text-zinc-500 dark:text-zinc-400">Metodología</p>                        
+                        <div class="card-block">
+                            <p class="text-xs text-muted">Metodología</p>                        
                             <p class="mt-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100">Scrum</p>                        
                         </div>
 
                     </div>
 
-                    <div class="mt-4 rounded-2xl bg-white/80 p-4 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-                        <p class="text-xs text-zinc-500 dark:text-zinc-400">Servicios / aportes típicos</p>
+                    <div class="mt-4 card-block">
+                        <p class="text-xs text-muted">Servicios / aportes típicos</p>
                         <ul class="mt-3 space-y-2 text-sm text-zinc-700 dark:text-zinc-200" role="list">
                             <li class="flex gap-2">
                                 <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-cyan-300" aria-hidden="true"></span>
@@ -78,163 +78,5 @@
 
     </div>
 
-    <!-- Carrusel de Proyectos  -->
-    <div class="mt-10">
-        <div class="flex flew-wrap items-end justify-between gap-3">
-            <div>
-                <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100" >
-                    Proyectos (visualizacion)
-                </h2>
-            </div>
-            <a
-                href="#projects"
-                class="inline-flex items-center gap-2 rounded-xl bg-white/70 px-4 py-2 text-sm font-semibold text-zinc-900 ring-1 ring-black/10 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:bg-white/5 dark:text-zinc-100 dark:ring-white/10 dark:hover:bg-white/10"
-            >
-                Ver sección completa
-                <svg
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    class="h-4 w-4 fill-none stroke-current"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <use xlink:href="../public/assets/sprite.svg#arrow"></use>
-                </svg>
-            </a>
-        </div>
 
-        <div
-            id="quickProjects" 
-            class="hscroll mt-5 overflow-x-auto rounded-3xl bg-white/70 ring-1 ring-black/10 backdrop-blur-xl dark:bg-white/5 dark:ring-white/10"
-            role="region"
-            aria-label="Proyectos destacados"
-            tabindex="0">
-            
-            <div class="flex gap-4 p-4 sm:p-5">
-                <!-- project 1 -->
-                <article
-                    class="group min-w-[320px] max-w-[320px] snap-start rounded-3xl bg-linear-to-tr from-violet-500/18 via-cyan-400/10 to-emerald-400/10 p-px transition hover:-translate-y-0.5"
-                    aria-label="Proyecto: CODA - Análisis de proyectos con IA">
-                    
-                    <div class="rounded-3xl bg-white/80 p-4 ring-1 ring-black/10 dark:bg-zinc-950/35 dark:ring-white/10">                        
-                        <div class="relative overflow-hidden rounded-2xl ring-1 ring-black/10 dark:ring-white/10">
-                            <div class="aspect-video bg-linear-to-tr from-violet-500/30 via-cyan-400/15 to-emerald-400/20"></div>
-                            <div class="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/85 px-3 py-1 text-xs text-zinc-700 ring-1 ring-black/10 backdrop-blur dark:bg-zinc-950/40 dark:text-zinc-200 dark:ring-white/10">
-                                <span class="h-2 w-2 rounded-full bg-emerald-300" aria-hidden="true"></span>
-                                Interno
-                            </div>
-                        </div>
-                        <h4 class="mt-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100">CODA - Análisis de proyectos con IA</h4>
-                        <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-                            Desarrollo web y mejoras para incorporación a Producción.
-                        </p>
-
-                        <div class="mt-3 flex flex-wrap items-center gap-2">
-                            <span class="quick-pill">Angular</span>
-                            <span class="quick-pill">React</span>
-                            <span class="quick-pill">TypeScript</span>
-                            <span class="quick-pill">Sonar</span>
-                        </div>
-
-                    </div>
-
-
-
-                    
-                </article>
-
-                <!-- project 2 -->
-                <article
-                    class="group min-w-[320px] max-w-[320px] snap-start rounded-3xl bg-linear-to-tr from-emerald-400/18 via-cyan-400/10 to-violet-500/16 p-px transition hover:-translate-y-0.5"
-                    aria-label="Proyecto: Cliente Telefónica"
-                    >
-                    <div class="rounded-3xl bg-white/80 p-4 ring-1 ring-black/10 dark:bg-zinc-950/35 dark:ring-white/10">
-                        <div class="relative overflow-hidden rounded-2xl ring-1 ring-black/10 dark:ring-white/10">
-                            <div class="aspect-video bg-linear-to-tr from-emerald-400/20 via-cyan-400/15 to-violet-500/25"></div>
-                            <div
-                                class="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/85 px-3 py-1 text-xs text-zinc-700 ring-1 ring-black/10 backdrop-blur dark:bg-zinc-950/40 dark:text-zinc-200 dark:ring-white/10"
-                            >
-                                <span class="h-2 w-2 rounded-full bg-cyan-300" aria-hidden="true"></span>
-                                Cliente
-                            </div>
-                        </div>
-
-                        <h4 class="mt-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-                            Telefónica · Frontend
-                        </h4>
-                        <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-                            Angular (9–19), Bootstrap/TDP y pases a Producción.
-                        </p>
-
-                        <div class="mt-3 flex flex-wrap items-center gap-2">
-                            <span class="quick-pill">Angular</span>
-                            <span class="quick-pill">React</span>
-                            <span class="quick-pill">Jenkins</span>
-                            <span class="quick-pill">Jira</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- project 3 -->
-                <article
-                    class="group min-w-[320px] max-w-[320px] snap-start rounded-3xl bg-linear-to-tr from-violet-500/18 via-cyan-400/10 to-emerald-400/10 p-px transition hover:-translate-y-0.5"
-                    aria-label="Proyecto: CODA - Análisis de proyectos con IA">
-                    
-                    <div class="rounded-3xl bg-white/80 p-4 ring-1 ring-black/10 dark:bg-zinc-950/35 dark:ring-white/10">                        
-                        <div class="relative overflow-hidden rounded-2xl ring-1 ring-black/10 dark:ring-white/10">
-                            <div class="aspect-video bg-linear-to-tr from-violet-500/30 via-cyan-400/15 to-emerald-400/20"></div>
-                            <div class="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/85 px-3 py-1 text-xs text-zinc-700 ring-1 ring-black/10 backdrop-blur dark:bg-zinc-950/40 dark:text-zinc-200 dark:ring-white/10">
-                                <span class="h-2 w-2 rounded-full bg-emerald-300" aria-hidden="true"></span>
-                                Interno
-                            </div>
-                        </div>
-                        <h4 class="mt-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100">CODA - Análisis de proyectos con IA</h4>
-                        <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-                            Desarrollo web y mejoras para incorporación a Producción.
-                        </p>
-
-                        <div class="mt-3 flex flex-wrap items-center gap-2">
-                            <span class="quick-pill">Angular</span>
-                            <span class="quick-pill">React</span>
-                            <span class="quick-pill">TypeScript</span>
-                            <span class="quick-pill">Sonar</span>
-                        </div>
-
-                    </div>
-                    
-                </article>
-
-                <!-- project 4 -->
-                <article
-                    class="group min-w-[320px] max-w-[320px] snap-start rounded-3xl bg-linear-to-tr from-violet-500/18 via-cyan-400/10 to-emerald-400/10 p-px transition hover:-translate-y-0.5"
-                    aria-label="Proyecto: CODA - Análisis de proyectos con IA">
-                    
-                    <div class="rounded-3xl bg-white/80 p-4 ring-1 ring-black/10 dark:bg-zinc-950/35 dark:ring-white/10">                        
-                        <div class="relative overflow-hidden rounded-2xl ring-1 ring-black/10 dark:ring-white/10">
-                            <div class="aspect-video bg-linear-to-tr from-violet-500/30 via-cyan-400/15 to-emerald-400/20"></div>
-                            <div class="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/85 px-3 py-1 text-xs text-zinc-700 ring-1 ring-black/10 backdrop-blur dark:bg-zinc-950/40 dark:text-zinc-200 dark:ring-white/10">
-                                <span class="h-2 w-2 rounded-full bg-emerald-300" aria-hidden="true"></span>
-                                Interno
-                            </div>
-                        </div>
-                        <h4 class="mt-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100">CODA - Análisis de proyectos con IA</h4>
-                        <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-                            Desarrollo web y mejoras para incorporación a Producción.
-                        </p>
-
-                        <div class="mt-3 flex flex-wrap items-center gap-2">
-                            <span class="quick-pill">Angular</span>
-                            <span class="quick-pill">React</span>
-                            <span class="quick-pill">TypeScript</span>
-                            <span class="quick-pill">Sonar</span>
-                        </div>
-
-                    </div>                    
-                </article>
-
-                <div class="w-1 shrink-0" aria-hidden="true"></div>
-            </div>
-        </div>
-    </div> 
 </section>

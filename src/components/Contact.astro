@@ -8,14 +8,14 @@
       <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
         Contacto
       </h2>
-      <p class="mt-2 max-w-xl text-pretty text-zinc-500 dark:text-zinc-400">
+      <p class="mt-2 max-w-xl text-pretty text-muted">
         Puedes escribirme por correo o por LinkedIn.
       </p>
 
       <div class="mt-6 grid gap-3">
         <a
           href="mailto:kenny.armas@gmail.com"
-          class="rounded-2xl bg-white/70 p-4 ring-1 ring-black/10 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:bg-white/5 dark:ring-white/10 dark:hover:bg-white/10"
+          class="card-block transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:hover:bg-white/10"
         >
           <p class="text-xs text-zinc-500 dark:text-zinc-500">Email</p>
           <p class="mt-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -27,7 +27,7 @@
           href="https://www.linkedin.com/in/kenny-armas-mantilla/"
           target="_blank"
           rel="noopener noreferrer"
-          class="rounded-2xl bg-white/70 p-4 ring-1 ring-black/10 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:bg-white/5 dark:ring-white/10 dark:hover:bg-white/10"
+          class="card-block transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:hover:bg-white/10  "
         >
           <p class="text-xs text-zinc-500 dark:text-zinc-500">LinkedIn</p>
           <p class="mt-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -35,7 +35,7 @@
           </p>
         </a>
 
-        <div class="rounded-2xl bg-white/70 p-4 ring-1 ring-black/10 dark:bg-white/5 dark:ring-white/10">
+        <div class="card-block">
           <p class="text-xs text-zinc-500 dark:text-zinc-500">Teléfono</p>
           <p class="mt-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
             902 296 547
@@ -44,7 +44,7 @@
       </div>
     </div>
 
-    <div class="rounded-3xl bg-white/70 p-6 ring-1 ring-black/10 backdrop-blur-xl dark:bg-white/5 dark:ring-white/10">
+    <div class="card-surface p-6 lg:pl-12">
       <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         Envíame un mensaje (sin backend)
       </h3>
@@ -57,7 +57,7 @@
       >
         <div class="grid gap-4 sm:grid-cols-2">
           <div>
-            <label for="name" class="text-sm text-zinc-700 dark:text-zinc-300">
+            <label for="name" class="text-sm text-soft">
               Nombre
             </label>
             <input
@@ -72,7 +72,7 @@
           </div>
 
           <div>
-            <label for="email" class="text-sm text-zinc-700 dark:text-zinc-300">
+            <label for="email" class="text-sm text-soft">
               Email
             </label>
             <input
@@ -88,7 +88,7 @@
         </div>
 
         <div>
-          <label for="topic" class="text-sm text-zinc-700 dark:text-zinc-300">
+          <label for="topic" class="text-sm text-soft">
             Motivo
           </label>
           <select
@@ -105,7 +105,7 @@
         </div>
 
         <div>
-          <label for="message" class="text-sm text-zinc-700 dark:text-zinc-300">
+          <label for="message" class="text-sm text-soft">
             Mensaje
           </label>
           <textarea
@@ -138,7 +138,7 @@
             </svg>
           </button>
 
-          <p id="formStatus" class="text-sm text-zinc-500 dark:text-zinc-400" aria-live="polite">
+          <p id="formStatus" class="text-sm text-muted" aria-live="polite">
             Respuesta automática (placeholder) al enviar.
           </p>
         </div>

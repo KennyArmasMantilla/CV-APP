@@ -1,12 +1,11 @@
-<header id="top" class="fixed inset-x-0 top-0 z-50 border-b border-black/8 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/60">
+<header id="top" class="fixed inset-x-0 top-0 z-50 border-b border-black/8 bg-white/72 backdrop-blur-2xl dark:border-white/10 dark:bg-zinc-950/68">
     <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
 
         <!-- Logo y nombre -->
         <div class="flex items-center gap-3">
-          <a href="#hero" class="group inline-flex items-center gap-3 rounded-xl px-2 py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
-            
+          <a href="#hero" class="group inline-flex items-center gap-3 rounded-xl px-2 py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400" aria-label="Ir al inicio">
             <span
-                class="relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-2xl bg-white/80 ring-1 ring-black/10 transition group-hover:bg-white dark:bg-white/5 dark:ring-white/10 dark:group-hover:bg-white/10"
+                class="relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-2xl bg-white/90 ring-1 ring-black/10 transition group-hover:bg-white dark:bg-white/5 dark:ring-white/10 dark:group-hover:bg-white/10"
                 aria-hidden="true"
               >
               <span
@@ -17,8 +16,8 @@
             </span>
                 
             <div class="leading-tight">
-              <p class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Kenny Armas</p>
-              <p class="text-xs text-zinc-500 dark:text-zinc-400">Web Developer</p>
+              <p class="text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Kenny Armas Mantilla</p>
+              <p class="text-xs text-muted">Senior Web Developer</p>
               </div>
           </a>
         </div>
@@ -46,14 +45,14 @@
               <!-- Sliding background -->
               <div 
                 id="themeThumb"
-                class="absolute left-1 top-1 h-10 w-20 rounded-full bg-slate-700/90 transition-all duration-300 ease-out">
+                class="absolute left-1 top-1 h-10 w-[78px] rounded-full bg-slate-700/90 transition-all duration-300 ease-out">
               </div>
 
               <!-- Dark button -->
               <button
                 id="darkBtn"
                 type="button"
-                class="theme-option relative z-10 flex h-10 w-20 cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-semibold text-white transition-colors duration-300"
+                class="theme-option relative z-10 flex h-10  w-[78px] cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-semibold text-white transition-colors duration-300"
                 data-theme="dark">
                 <svg width="28" height="28" class="fill-current drop-shadow-[0_0_6px_rgba(34,211,238,0.55)]">
                   <use xlink:href="../public/assets/sprite.svg#moon"></use>   
@@ -65,7 +64,7 @@
               <button
                 id="lightBtn"
                 type="button"
-                class="theme-option relative z-10 flex h-10 w-20 cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-semibold text-zinc-400 transition-colors duration-300"
+                class="theme-option relative z-10 flex h-10  w-[78px] cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-semibold text-zinc-400 transition-colors duration-300"
                 data-theme="light">
                 <svg width="28" height="28" class="fill-current drop-shadow-[0_0_6px_rgba(34,211,238,0.55)]">
                   <use xlink:href="../public/assets/sprite.svg#sun"></use>   
@@ -77,8 +76,9 @@
           <!-- CTA -->
           <a 
             href="#contact"
-            class="hidden md:inline-flex rounded-xl bg-linear-to-tr 
-            from-violet-500 via-cyan-400 to-emerald-400 px-4 py-2 text-sm font-semibold text-zinc-950 shadow-lg transition hover:scale-[1.02]">
+            class="hidden rounded-xl bg-linear-to-tr from-violet-500 via-cyan-400 to-emerald-400 
+            px-4 py-2 text-sm font-semibold text-zinc-950 shadow-[0_12px_40px_rgba(34,211,238,0.18)] transition 
+            duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_48px_rgba(34,211,238,0.24)] focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 md:inline-flex">
             Contactar
           </a>
 
@@ -86,7 +86,7 @@
           <button
             id="mobileMenuBtn"
             type="button"
-            class="inline-flex items-center justify-center rounded-xl bg-white/80 p-2 text-zinc-800 ring-1 ring-black/10 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:bg-white/5 dark:text-zinc-200 dark:ring-white/10 dark:hover:bg-white/10 md:hidden"
+            class="inline-flex items-center justify-center rounded-xl bg-white/90 p-2 text-zinc-800 ring-1 ring-black/10 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:bg-white/5 dark:text-zinc-200 dark:ring-white/10 dark:hover:bg-white/10 md:hidden"
             aria-label="Abrir menú"
             aria-controls="mobileMenu"
             aria-expanded="false">
@@ -109,7 +109,7 @@
     <!-- Mobile menu -->
   <div
     id="mobileMenu"
-    class="hidden border-t border-black/10 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/80 md:hidden"
+    class="hidden border-t border-black/10 bg-white/90 backdrop-blur-2xl dark:border-white/10 dark:bg-zinc-950/84 md:hidden"
   >
     <nav
       class="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 sm:px-6"

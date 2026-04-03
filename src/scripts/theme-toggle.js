@@ -10,9 +10,9 @@ function applyTheme(theme) {
   root.classList.toggle("dark", isDark);
 
   if (thumb) {
-    thumb.style.transform = isDark ? "translateX(0)" : "translateX(80px)";
+    thumb.style.transform = isDark ? "translateX(0)" : "translateX(78px)";
     thumb.className = 
-    "absolute left-1 top-1 h-10 w-[80px] rounded-full transition-all duration-300 ease-out " + 
+    "absolute left-1 top-1 h-10 w-[78px] rounded-full transition-all duration-300 ease-out " + 
     (isDark 
         ? "bg-slate-700/90 shadow-[0_0_18px_rgba(34,211,238,0.12)]"
         : "bg-white/95 shadow-[0_4px_20px_rgba(0,0,0,0.18)]");
