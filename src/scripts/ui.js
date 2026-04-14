@@ -109,9 +109,9 @@ if (backToTop) {
 const animatedSections = Array.from(document.querySelectorAll(".section-animate"));
 
 const hiddenClasses = [
-  "opacity-0",
+  "opacity-50",
   "translate-y-3",
-  "blur-[2px]",
+  "blur-[3px]",
   "transition",
   "duration-700",
   "ease-out",
@@ -132,13 +132,17 @@ const revealObserver = new IntersectionObserver(
       revealObserver.unobserve(el);
     });
   },
-  { threshold: 0.15, rootMargin: "-15% 0px -40% 0px" }
+  { threshold: 0.15, rootMargin: "-15% 0px -30% 0px" }
 );
 
 animatedSections.forEach((el) => revealObserver.observe(el));
 
 // Active nav
-const sections = Array.from(document.querySelectorAll("section[id]"));
+const sections = Array.from(
+  document.querySelectorAll(
+    '#hero, #about-me, #skills, #projects, #experience, #certifications, #contact'
+  )
+);
 const navLinks = Array.from(document.querySelectorAll('a.nav-link[href^="#"]'));
 
 function setActiveLink(id) {

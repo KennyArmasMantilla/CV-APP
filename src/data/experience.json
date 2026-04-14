@@ -48,7 +48,7 @@
         "summary": "Desarrollo fullstack con Angular, microservicios REST y soporte a producción, incluyendo integración de equipos, revisión técnica y despliegues.",
         "description": "Desarrollo con JavaScript y Angular 9, 11, 13 y 15. Uso de Bootstrap 4 y librería de estilos TDP del cliente. Manejo avanzado de Git, Jenkins, JIRA y Bitbucket para despliegues y control de pases a producción. Participación en onboarding de nuevos integrantes, revisión de código fuente, resolución de impedimentos técnicos, implementación de nuevos requerimientos con Líder Técnico y Product Owner, desarrollo bajo SCRUM, creación de microservicios REST con Spring Boot, migración de microservicios de MongoDB a Microsoft Azure y uso de Postman y FileZilla.",
         "tech": ["JavaScript", "Angular 9", "Angular 11", "Angular 13", "Angular 15", "Bootstrap 4", "Git", "Jenkins", "Jira", "Bitbucket", "Spring Boot", "REST API", "MongoDB", "Microsoft Azure", "Postman", "FileZilla", "Scrum"],
-        "image": "/experience/ntt-fullstack.jpg",
+        "image": "/experience/VISOR.png",
         "badge": "NTT DATA · 2025"
       }
     ]
