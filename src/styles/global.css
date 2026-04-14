@@ -104,3 +104,97 @@ body {
   @apply rounded-2xl bg-white/85 p-4 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10;
 }
 
+
+.experience-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(120, 120, 120, 0.35) transparent;
+}
+
+.experience-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.experience-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.experience-scroll::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.35);
+  border-radius: 999px;
+}
+
+.experience-timeline {
+  overflow: hidden;
+}
+
+.timeline-year-item + .timeline-year-item {
+  border-top: 1px solid rgba(34, 211, 238, 0.25);
+}
+  
+.dark .timeline-year-item + .timeline-year-item {
+  border-top-color: rgba(34, 211, 238, 0.25);
+}
+
+.timeline-year-btn {
+  @apply relative flex min-h-[92px] w-full items-center justify-between gap-4 px-5 py-5 text-left transition duration-300;
+}
+
+.timeline-label {
+  @apply text-lg font-medium text-zinc-500 transition duration-300 dark:text-zinc-400;
+}
+
+.timeline-dot {
+  @apply h-4 w-4 shrink-0 rounded-full border border-black/10 bg-white transition duration-300 dark:border-white/10 dark:bg-zinc-950;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.72);
+}
+
+.dark .timeline-dot {
+  box-shadow: 0 0 0 6px rgba(24, 24, 27, 0.72);
+}
+
+.timeline-year-btn.is-active .timeline-label {
+  @apply text-4xl font-semibold text-zinc-900 dark:text-zinc-100;
+}
+
+.timeline-year-btn.is-active .timeline-dot {
+  @apply border-cyan-300 bg-cyan-300;
+  box-shadow: 0 0 0 8px rgba(34, 211, 238, 0.14);
+}
+
+body.modal-open header,
+body.modal-open main,
+body.modal-open footer,
+body.modal-open #backToTop {
+  filter: blur(10px);
+  opacity: 0.22;
+  transition: filter 300ms ease, opacity 300ms ease;
+}
+
+#experienceModalOverlay {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(6px);
+}
+
+.dark #experienceModalOverlay {
+  background: rgba(8, 8, 14, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.experience-layout {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .experience-layout::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 220px;
+    width: 1px;
+
+    background-color: rgba(34, 211, 238, 0.35);
+  }
+}
+
+

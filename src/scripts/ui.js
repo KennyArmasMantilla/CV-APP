@@ -178,3 +178,150 @@ const spyObserver = new IntersectionObserver(
 );
 
 sections.forEach((section) => spyObserver.observe(section));
+
+
+// Experience timeline + modal
+const experienceScroller = document.getElementById("experienceScroller");
+const yearSections = Array.from(document.querySelectorAll(".experience-year-section"));
+const timelineButtons = Array.from(document.querySelectorAll(".timeline-year-btn"));
+
+function setActiveTimeline(targetId) {
+  timelineButtons.forEach((btn) => {
+    const active = btn.dataset.target === targetId;
+    btn.classList.toggle("is-active", active);
+    btn.setAttribute("aria-current", active ? "true" : "false");
+  });
+}
+
+timelineButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const targetId = btn.dataset.target;
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    setActiveTimeline(targetId);
+  });
+});
+
+if (experienceScroller && yearSections.length) {
+  const experienceObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visible.length > 0) {
+        setActiveTimeline(visible[0].target.id);
+      }
+    },
+    {
+      root: experienceScroller,
+      threshold: [0.2, 0.4, 0.6],
+      rootMargin: "-10% 0px -55% 0px",
+    }
+  );
+
+  yearSections.forEach((section) => experienceObserver.observe(section));
+}
+
+// Experience modal
+const modal = document.getElementById("experienceModal");
+const modalOverlay = document.getElementById("experienceModalOverlay");
+const modalClose = document.getElementById("experienceModalClose");
+const detailButtons = Array.from(document.querySelectorAll(".experience-detail-btn"));
+
+const modalTitle = document.getElementById("experienceModalTitle");
+const modalDate = document.getElementById("experienceModalDate");
+const modalCompanyBadge = document.getElementById("experienceModalCompanyBadge");
+const modalLocation = document.getElementById("experienceModalLocation");
+const modalCompanyText = document.getElementById("experienceModalCompanyText");
+const modalClient = document.getElementById("experienceModalClient");
+const modalDescription = document.getElementById("experienceModalDescription");
+const modalTech = document.getElementById("experienceModalTech");
+const modalImage = document.getElementById("experienceModalImage");
+
+function openExperienceModal(data) {
+  if (!modal || !modalOverlay || !modalClose) return;
+
+  if (modalTitle) modalTitle.textContent = data.title || "";
+  if (modalDate) modalDate.textContent = data.date || "";
+  if (modalLocation) modalLocation.textContent = data.location || "";
+  if (modalCompanyText) modalCompanyText.textContent = data.company || "";
+  if (modalClient) modalClient.textContent = data.client || "";
+  if (modalDescription) modalDescription.textContent = data.description || "";
+
+  if (modalImage) {
+    modalImage.src = data.image || "";
+    modalImage.alt = data.title || "Experiencia";
+  }
+
+  if (modalTech) {
+    modalTech.innerHTML = "";
+    (data.tech || "")
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean)
+      .forEach((item) => {
+        const pill = document.createElement("span");
+        pill.className = "quick-pill";
+        pill.textContent = item;
+        modalTech.appendChild(pill);
+      });
+  }
+
+  modalOverlay.classList.remove("hidden", "pointer-events-none", "opacity-0");
+  modal.classList.remove("hidden", "pointer-events-none", "opacity-0");
+  modalClose.classList.remove("hidden", "pointer-events-none");
+  modalClose.classList.add("inline-flex");
+
+  requestAnimationFrame(() => {
+    modalOverlay.classList.add("opacity-100");
+    modal.classList.add("opacity-100");
+  });
+
+  document.body.classList.add("modal-open");
+}
+
+function closeExperienceModal() {
+  if (!modal || !modalOverlay || !modalClose) return;
+
+  modalOverlay.classList.add("opacity-0");
+  modal.classList.add("opacity-0");
+  modalClose.classList.remove("inline-flex");
+
+  document.body.classList.remove("modal-open");
+
+  setTimeout(() => {
+    modalOverlay.classList.add("hidden", "pointer-events-none");
+    modal.classList.add("hidden", "pointer-events-none");
+    modalClose.classList.add("hidden", "pointer-events-none");
+  }, 250);
+}
+
+detailButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    openExperienceModal({
+      title: btn.dataset.modalTitle,
+      date: btn.dataset.modalDate,
+      company: btn.dataset.modalCompany,
+      client: btn.dataset.modalClient,
+      description: btn.dataset.modalDescription,
+      tech: btn.dataset.modalTech,
+      image: btn.dataset.modalImage,
+      location: btn.dataset.modalLocation,
+      badge: btn.dataset.modalBadge,
+    });
+  });
+});
+
+modalOverlay?.addEventListener("click", closeExperienceModal);
+modalClose?.addEventListener("click", closeExperienceModal);
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeExperienceModal();
+});
