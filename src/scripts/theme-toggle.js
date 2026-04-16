@@ -40,8 +40,13 @@ function initTheme() {
     applyTheme(theme);
 }
 
-darkBtn?.addEventListener("click", () => applyTheme("dark"));
-lightBtn?.addEventListener("click", () => applyTheme("light"));
+darkBtn?.addEventListener("click", () => {
+  changeThemeWithTransition("dark", darkBtn);
+});
+
+lightBtn?.addEventListener("click", () => {
+  changeThemeWithTransition("light", lightBtn);
+});
 
 themeToggle.addEventListener("keydown", (e) => {
   if (e.key === "Enter" || e.key === " ") {
@@ -52,4 +57,35 @@ themeToggle.addEventListener("keydown", (e) => {
 
 });
 
+
+//Cmabio de tema
+
+function changeThemeWithTransition(theme, sourceEl) { 
+  const originEl= sourceEl || themeToggle;
+
+  if (originEl) {
+    const rect = originEl.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+    document.documentElement.style.setProperty("--theme-origin-x", `${x}px`);
+    document.documentElement.style.setProperty("--theme-origin-y", `${y}px`);
+  }
+
+  if (!document.startViewTransition) {
+    applyTheme(theme);
+    return;
+  }
+
+  document.startViewTransition(() => {
+    applyTheme(theme);
+  });
+
+}
+
 initTheme();
+
+
+
+
+

@@ -1,9 +1,16 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --theme-origin-x: 50vw;
+  --theme-origin-y: 50vh;
+  --theme-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* Base: recomendado para consistencia */
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 body {
@@ -48,7 +55,7 @@ body {
 .hscroll::-webkit-scrollbar-thumb {
   background: rgba(120, 120, 120, 0.35);
   border-radius: 999px;
-}  
+}
 
 
 .skill-chip {
@@ -88,6 +95,7 @@ body {
 .text-muted {
   @apply text-zinc-500 dark:text-zinc-400;
 }
+
 .card-surface {
   @apply rounded-3xl bg-white/72 ring-1 ring-black/10 backdrop-blur-xl dark:bg-white/5 dark:ring-white/10;
 }
@@ -127,11 +135,11 @@ body {
   overflow: hidden;
 }
 
-.timeline-year-item + .timeline-year-item {
+.timeline-year-item+.timeline-year-item {
   border-top: 1px solid rgba(34, 211, 238, 0.25);
 }
-  
-.dark .timeline-year-item + .timeline-year-item {
+
+.dark .timeline-year-item+.timeline-year-item {
   border-top-color: rgba(34, 211, 238, 0.25);
 }
 
@@ -198,3 +206,29 @@ body.modal-open #backToTop {
 }
 
 
+/* -----blur transition ---------------*/
+::view-transition-group(root) {
+  animation-timing-function: var(--theme-ease);
+}
+
+::view-transition-new(root) {
+  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="0" cy="0" r="18" fill="white" filter="url(%23blur)"/></svg>') top left / 0 no-repeat;
+  mask-origin: content-box;
+  animation: scale 1s;
+  animation-fill-mode: both;
+  transform-origin: var(--theme-origin-x) var(--theme-origin-y);;
+}
+
+::view-transition-old(root),
+.dark::view-transition-old(root) {
+  animation: scale 1s;
+  animation-fill-mode: both;
+  transform-origin: var(--theme-origin-x) var(--theme-origin-y);;
+  z-index: -1;
+}
+
+@keyframes scale {
+  to {
+    mask-size: 350vmax;
+  }
+}
