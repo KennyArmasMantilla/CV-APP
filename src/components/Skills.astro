@@ -1,177 +1,155 @@
-<section id="skills"
-    class="scroll-mt-24 border-t border-black/10 py-14 dark:border-white/10 sm:py-18"
-    aria-label="Habilidades técnicas">
 
-    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">  
-        
-        <div>
-            <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-                Habilidades técnicas
-            </h2>
-            <p class="mt-2 max-w-2xl text-pretty text-muted">
-                Frameworks modernos, calidad y herramientas: pensado para equipos y producción.
-            </p>
-        </div>
+---
+import skillsData from '../data/skills.json';
+---
 
-        <div class="inline-flex flex-wrap items-center gap-2">
-            <span class="text-xs text-zinc-500">Nivel:</span>
+<section id="skill"
+  class="scroll-mt-24 border-t border-black/10 py-14 dark:border-white/10 sm:py-18"
+  aria-label="Habilidades tècnicas"
+  data-skills-root>
 
-            <span class="quick-pill">
-                <span class="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(52,211,153,0.45)]" aria-hidden="true"></span>
-                Fuerte
-            </span>
+  <div class="mx-auto">  
+    <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">    
+      {skillsData.title}
+    </h2>
 
-            <span class="quick-pill">
-                <span class="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.45)]" aria-hidden="true"></span>
-                Sólido
-            </span>
+    <p class="mt-4 max-w-3xl text-balance text-base leading-8 text-zinc-600 dark:text-zinc-400 sm:text-lg">
+      {skillsData.description}
+    </p>
 
-            <span class="quick-pill">
-                <span class="h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_18px_rgba(167,139,250,0.40)]" aria-hidden="true"></span>
-                En curso
-            </span>
-        </div>        
-    </div>
+    <div
+      class="relative mt-12 flex flex-wrap items-center justify-center gap-3"
+      role="tablist"
+      aria-label="Categorías del stack tecnológico"
+      data-skills-tabs>
+      <span
+        data-skills-pill
+        class="pointer-events-none absolute left-0 top-0 hidden rounded-2xl bg-linear-to-r from-violet-500 via-cyan-400 to-emerald-400 shadow-[0_16px_50px_rgba(34,211,238,0.16)] transition-all duration-300 ease-out md:block"
+        aria-hidden="true"
+      ></span>
 
-    <div class="mt-8 grid gap-6 lg:grid-cols-3">
-        <!-- Frontend -->
-        <div class="group rounded-3xl bg-linear-to-tr from-cyan-400/18 via-violet-500/10 to-emerald-400/12 p-px transition hover:-translate-y-1 hover:shadow-[0_28px_110px_rgba(34,211,238,0.12)]">
-      <div class="relative overflow-hidden rounded-3xl bg-white/70 p-6 ring-1 ring-black/10 backdrop-blur-xl dark:bg-white/5 dark:ring-white/10">
-        <div aria-hidden="true" class="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-cyan-400/10 blur-2xl"></div>
+      {skillsData.categories.map((category, index) => (
+        <button
+          type="button"
+          role="tab"
+          aria-selected={index === 0 ? "true" : "false"}
+          tabindex={index === 0 ? "0" : "-1"}
+          data-skill-tab={category.id}
+          class:list={[
+            "skills-tab relative z-10 inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold transition-all duration-300 cursor-pointer",
+            index === 0 
+            ? "is-active text-white" 
+            : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+          ]}
+          >
+          <span class="relative z-10 inline-flex items-center gap-2">
+            {category.icon === "codeLanguages" && (
+              <svg aria-hidden="true" class="h-5 w-5 fill-none stroke-current" stroke-width="2">
+                <use xlink:href="../public/assets/sprite.svg#codeLanguages"></use>
+              </svg>
+            )}
+            {category.icon === "globe" && (
+              <svg aria-hidden="true" class="h-5 w-5 fill-none stroke-current" stroke-width="2">
+                <use xlink:href="../public/assets/sprite.svg#globe"></use>
+              </svg>
+            )}
 
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-white/80 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-              <span class="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.55)]" aria-hidden="true"></span>
-            </span>
-            <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Frontend</h3>
-          </div>
+            {category.icon === "database" && (
+              <svg aria-hidden="true" class="h-5 w-5 fill-none stroke-current" stroke-width="2">
+                <use xlink:href="../public/assets/sprite.svg#database"></use>
+              </svg>
+            )}
 
-          <span class="rounded-full bg-white/80 px-3 py-1 font-mono text-[11px] text-zinc-700 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:text-zinc-300 dark:ring-white/10">
-            UI
+            {category.icon === "boxes" && (
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="2">
+                <use xlink:href="../public/assets/sprite.svg#boxes"></use>
+              </svg>
+            )}
+            <span>{category.title}</span>
           </span>
-        </div>
-
-        <div class="mt-4">
-          <p class="text-xs text-zinc-500 dark:text-zinc-500">Focus</p>
-          <div class="mt-2 h-2 overflow-hidden rounded-full bg-white/80 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-            <div class="h-full w-[86%] rounded-full bg-linear-to-r from-cyan-300/70 via-violet-400/50 to-emerald-300/60"></div>
-          </div>
-        </div>
-
-        <div class="mt-5 flex flex-wrap gap-2" aria-label="Chips de Frontend">
-          <span class="skill-chip">Angular (9–19)</span>
-          <span class="skill-chip">React 18</span>
-          <span class="skill-chip">TypeScript</span>
-          <span class="skill-chip">JavaScript</span>
-          <span class="skill-chip">HTML · CSS</span>
-          <span class="skill-chip">Bootstrap 4</span>
-          <span class="skill-chip">Tailwind v4</span>
-          <span class="skill-chip">Figma (handoff)</span>
-          <span class="skill-chip">TDP (Design System)</span>
-        </div>
-
-        <div class="mt-6 rounded-2xl bg-white/80 p-4 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-          <p class="text-xs text-muted">Aporte típico</p>
-          <p class="mt-1 text-sm text-zinc-800 dark:text-zinc-200">
-            Componentes, flujos, mejoras, refactor y soporte a producción.
-          </p>
-        </div>
-      </div>
+        </button>
+      ))}
     </div>
 
-    <!-- Backend -->
-    <div class="group rounded-3xl bg-linear-to-tr from-emerald-400/16 via-cyan-400/10 to-violet-500/14 p-px transition hover:-translate-y-1 hover:shadow-[0_28px_110px_rgba(52,211,153,0.10)]">
-      <div class="relative overflow-hidden rounded-3xl bg-white/70 p-6 ring-1 ring-black/10 backdrop-blur-xl dark:bg-white/5 dark:ring-white/10">
-        <div aria-hidden="true" class="pointer-events-none absolute -left-16 -top-16 h-44 w-44 rounded-full bg-emerald-400/10 blur-2xl"></div>
+    <div class="relative mt-12" data-skills-panels>
+      {skillsData.categories.map((category, index) => (
+        <div
+          id="tabpanel"
+          aria-hidden= { index === 0 ? "false" : "true" }
+          data-skill-panel={category.id}
+          class:list={[
+            "skills-panel transition-all duration-500 ease-out",          
+            index === 0 ? "opacity-100 translate-y-0 pointer-events-auto" : "hidden opacity-0 translate-y-4 pointer-events-none"
+          ]}
+          >
 
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-white/80 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-              <span class="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(52,211,153,0.55)]" aria-hidden="true"></span>
-            </span>
-            <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Backend</h3>
+          <div
+            class:list={[
+              "pointer-events-none absolute -inset-4 rounded-4xl bg-linear-to-r opacity-[0.06] blur-3xl",
+              category.gradient
+            ]}
+            aria-hidden="true">
           </div>
 
-          <span class="rounded-full bg-white/80 px-3 py-1 font-mono text-[11px] text-zinc-700 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:text-zinc-300 dark:ring-white/10">
-            API
-          </span>
-        </div>
+          <div class="relative grid grid-cols-1 gap-4 md:grid-cols-2"> 
 
-        <div class="mt-4">
-          <p class="text-xs text-zinc-500 dark:text-zinc-500">Cobertura</p>
-          <div class="mt-2 h-2 overflow-hidden rounded-full bg-white/80 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-            <div class="h-full w-[62%] rounded-full bg-linear-to-r from-emerald-300/70 via-cyan-300/45 to-violet-400/45"></div>
+            {category.skills.map((skill, skillIndex) => (
+              <article
+                class="skills-card group relative rounded-[1.75rem] bg-white/70 p-6 ring-1 ring-black/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white/85 hover:shadow-[0_22px_80px_rgba(34,211,238,0.10)] dark:bg-white/5 dark:ring-white/10 dark:hover:bg-white/7"
+                style={`--skill-delay:${skillIndex * 60}ms;`}
+                >
+
+                <div
+                  class:list={[
+                    "pointer-events-none absolute inset-0 rounded-[1.75rem] bg-linear-to-r opacity-0 transition-opacity duration-300 group-hover:opacity-[0.06]",
+                    category.gradient
+                  ]}
+                  aria-hidden="true"
+                ></div>
+
+                <div class="relative flex items-start gap-4">
+                  <div
+                    class:list={[
+                      "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)]",
+                      category.gradient
+                    ]}
+                  >
+                    <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="2">
+                      <circle cx="12" cy="12" r="9" />
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                  </div>
+
+                  <div class="min-w-0 flex-1">
+                    <h3 class="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+                      {skill.name}
+                    </h3>
+                    <p class="mt-1 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+                      {skill.description}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="relative mt-5 flex flex-wrap gap-2">
+                  {skill.tags.map((tag) => (
+                    <span class="rounded-xl bg-white/80 px-3 py-1 text-xs font-medium text-zinc-700 ring-1 ring-black/10 dark:bg-white/5 dark:text-zinc-300 dark:ring-white/10">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+
+              </article>
+
+
+
+            ))}
+
           </div>
         </div>
-
-        <div class="mt-5 flex flex-wrap gap-2" aria-label="Chips de Backend">
-          <span class="skill-chip">Spring Boot (REST)</span>
-          <span class="skill-chip">Microservicios</span>
-          <span class="skill-chip">ASP.NET MVC</span>
-          <span class="skill-chip">ASP.NET Web API</span>
-          <span class="skill-chip">VB.NET</span>
-          <span class="skill-chip">MySQL</span>
-          <span class="skill-chip">SQL Server</span>
-          <span class="skill-chip">DB2 (IBM)</span>
-          <span class="skill-chip">MongoDB</span>
-          <span class="skill-chip">Azure (migración)</span>
-        </div>
-
-        <div class="mt-6 rounded-2xl bg-white/80 p-4 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-          <p class="text-xs text-muted">Enfoque</p>
-          <p class="mt-1 text-sm text-zinc-800 dark:text-zinc-200">
-            Integración, consumo de APIs y soporte técnico para equipos.
-          </p>
-        </div>
-      </div>
+      ))}
     </div>
-
-    <!-- Tooling -->
-    <div class="group rounded-3xl bg-linear-to-tr from-violet-500/16 via-cyan-400/10 to-emerald-400/12 p-px transition hover:-translate-y-1 hover:shadow-[0_28px_110px_rgba(167,139,250,0.10)]">
-      <div class="relative overflow-hidden rounded-3xl bg-white/70 p-6 ring-1 ring-black/10 backdrop-blur-xl dark:bg-white/5 dark:ring-white/10">
-        <div aria-hidden="true" class="pointer-events-none absolute -right-14 -bottom-16 h-44 w-44 rounded-full bg-violet-500/10 blur-2xl"></div>
-
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-white/80 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-              <span class="h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_18px_rgba(167,139,250,0.55)]" aria-hidden="true"></span>
-            </span>
-            <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Tooling</h3>
-          </div>
-
-          <span class="rounded-full bg-white/80 px-3 py-1 font-mono text-[11px] text-zinc-700 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:text-zinc-300 dark:ring-white/10">
-            Equipo
-          </span>
-        </div>
-
-        <div class="mt-4">
-          <p class="text-xs text-zinc-500 dark:text-zinc-500">Flujo</p>
-          <div class="mt-2 h-2 overflow-hidden rounded-full bg-white/80 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-            <div class="h-full w-[78%] rounded-full bg-linear-to-r from-violet-400/65 via-cyan-300/45 to-emerald-300/45"></div>
-          </div>
-        </div>
-
-        <div class="mt-5 flex flex-wrap gap-2" aria-label="Chips de Tooling">
-          <span class="skill-chip">Git</span>
-          <span class="skill-chip">GitLab</span>
-          <span class="skill-chip">Bitbucket</span>
-          <span class="skill-chip">Jenkins</span>
-          <span class="skill-chip">Jira</span>
-          <span class="skill-chip">Sonar</span>
-          <span class="skill-chip">Postman</span>
-          <span class="skill-chip">FileZilla</span>
-        </div>
-
-        <div class="mt-6 rounded-2xl bg-white/80 p-4 ring-1 ring-black/10 dark:bg-zinc-950/40 dark:ring-white/10">
-          <p class="text-xs text-muted">Metodología</p>
-          <p class="mt-1 text-sm text-zinc-800 dark:text-zinc-200">
-            Scrum, comunicación, onboarding y alineamiento de equipo.
-          </p>
-        </div>
-      </div>
-    </div>
-
-
-    </div>
+  </div>
 </section>
+
+

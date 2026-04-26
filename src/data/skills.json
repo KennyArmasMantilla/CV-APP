@@ -1,0 +1,149 @@
+{
+  "title": "Habilidades Técnicas",
+  "description": "Herramientas y lenguajes que domino para desarrollar soluciones completas",
+  "footerNote": "Actualizando constantemente mis conocimientos",
+  "categories": [
+    {
+      "id": "languages",
+      "title": "Lenguajes",
+      "icon": "codeLanguages",
+      "gradient": "from-cyan-400 via-sky-500 to-emerald-400",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "description": "Desarrollo web moderno, lógica de negocio e integración de interfaces corporativas.",
+          "tags": ["ES6+", "Async/Await", "SPA"]
+        },
+        {
+          "name": "TypeScript",
+          "description": "Tipado para proyectos frontend escalables y mantenibles.",
+          "tags": ["Tipado", "Escalabilidad", "Angular"]
+        },
+        {
+          "name": "Java",
+          "description": "Base sólida para servicios backend y microservicios empresariales.",
+          "tags": ["POO", "Spring", "REST"]
+        },
+        {
+          "name": "SQL",
+          "description": "Consultas, mantenimiento y trabajo con bases de datos relacionales.",
+          "tags": ["Queries", "Optimización", "Relacional"]
+        }
+      ]
+    },
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "icon": "globe",
+      "gradient": "from-violet-500 via-fuchsia-500 to-pink-500",
+      "skills": [
+        {
+          "name": "Angular",
+          "description": "Experiencia sólida en Angular 9, 11, 13, 15 y 19 para proyectos corporativos.",
+          "tags": ["Angular 9–19", "Componentes", "SPA"]
+        },
+        {
+          "name": "React",
+          "description": "Construcción de interfaces modernas y reutilizables en React 18.",
+          "tags": ["React 18", "UI", "Hooks"]
+        },
+        {
+          "name": "Bootstrap",
+          "description": "Maquetación y construcción rápida de interfaces consistentes.",
+          "tags": ["Bootstrap 4", "Responsive", "UI"]
+        },
+        {
+          "name": "HTML & CSS",
+          "description": "Base semántica, responsive y mantenible para frontend profesional.",
+          "tags": ["Semántica", "Responsive", "Accesibilidad"]
+        },
+        {
+          "name": "Tailwind CSS",
+          "description": "Construcción de interfaces modernas utility-first con foco en velocidad.",
+          "tags": ["Utility-first", "Diseño", "Productividad"]
+        },
+        {
+          "name": "Figma",
+          "description": "Interpretación de diseños y handoff para implementar interfaces precisas.",
+          "tags": ["Handoff", "UI", "Colaboración"]
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "title": "Backend & Base de Datos",
+      "icon": "database",
+      "gradient": "from-emerald-400 via-teal-500 to-cyan-500",
+      "skills": [
+        {
+          "name": "Spring Boot",
+          "description": "Desarrollo de microservicios REST para entornos empresariales.",
+          "tags": ["REST", "Microservicios", "Java"]
+        },
+        {
+          "name": "ASP.NET MVC",
+          "description": "Desarrollo y mantenimiento de soluciones web empresariales.",
+          "tags": ["MVC", ".NET", "Enterprise"]
+        },
+        {
+          "name": "ASP.NET Web API",
+          "description": "Exposición e integración de APIs en sistemas corporativos.",
+          "tags": ["Web API", "Integración", ".NET"]
+        },
+        {
+          "name": "MySQL",
+          "description": "Administración y soporte para sistemas comerciales y operativos.",
+          "tags": ["Consultas", "Mantenimiento", "Relacional"]
+        },
+        {
+          "name": "SQL Server & DB2",
+          "description": "Trabajo con bases de datos corporativas y entornos heredados.",
+          "tags": ["SQL Server", "DB2", "Corporativo"]
+        },
+        {
+          "name": "MongoDB & Azure",
+          "description": "Migración y soporte técnico en servicios orientados a datos.",
+          "tags": ["MongoDB", "Azure", "Migración"]
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Herramientas & DevOps",
+      "icon": "boxes",
+      "gradient": "from-violet-500 via-cyan-400 to-emerald-400",
+      "skills": [
+        {
+          "name": "Git",
+          "description": "Control de versiones para trabajo colaborativo y despliegues ordenados.",
+          "tags": ["Branching", "Repos", "Colaboración"]
+        },
+        {
+          "name": "GitLab & Bitbucket",
+          "description": "Gestión de repositorios y trabajo continuo con equipos técnicos.",
+          "tags": ["Repos", "Merge", "Workflow"]
+        },
+        {
+          "name": "Jenkins",
+          "description": "Soporte a pipelines y pases a producción en entornos corporativos.",
+          "tags": ["CI/CD", "Deploy", "Pipelines"]
+        },
+        {
+          "name": "Jira",
+          "description": "Seguimiento de tareas, requerimientos e impedimentos técnicos.",
+          "tags": ["Scrum", "Tracking", "Equipo"]
+        },
+        {
+          "name": "Sonar",
+          "description": "Control de calidad de código y mejora continua de mantenibilidad.",
+          "tags": ["Code Quality", "Review", "Buenas prácticas"]
+        },
+        {
+          "name": "Postman & FileZilla",
+          "description": "Testing de APIs, validación de flujos y soporte operativo.",
+          "tags": ["Testing", "APIs", "Soporte"]
+        }
+      ]
+    }
+  ]
+}

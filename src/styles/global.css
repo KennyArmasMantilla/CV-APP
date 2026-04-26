@@ -232,3 +232,35 @@ body.modal-open #backToTop {
     mask-size: 350vmax;
   }
 }
+
+/*         Habilidades tecnicas             */
+
+.skills-tab {
+  @apply overflow-hidden bg-transparent;
+}
+
+.skills-tab.is-active {
+  @apply shadow-[0_16px_50px_rgba(34,211,238,0.14)]
+}
+
+.skills-panel {
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skills-card {
+  animation: skill-card-in 0.45s ease-out both;
+  animation-delay: var(--skill-delay, 0ms);
+}
+
+@keyframes skill-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
