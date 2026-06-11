@@ -4,10 +4,46 @@ if (yearEl) {
 }
 
 const form = document.getElementById("contactForm");
-const status = document.getElementById("formStatus");
+const statusForm = document.getElementById("formStatus");
 
-function setStatus(message) {
-  if (status) status.textContent = message;
+function setStatus(type, message) {
+  if (!statusForm) return;
+
+  statusForm.textContent = message;
+  statusForm.classList.remove(
+    "hidden",
+    "text-muted",
+    "text-emerald-500",
+    "text-red-500",
+    "text-cyan-500",
+    "dark:text-emerald-300",
+    "dark:text-red-300",
+    "dark:text-cyan-300"
+  );
+
+  if (!message) {
+    statusForm.classList.add("hidden");
+    return;
+  }
+
+  switch (type) {
+    case "success":
+      statusForm.classList.add("text-emerald-500", "dark:text-emerald-300");
+      break;
+
+    case "error":
+      statusForm.classList.add("text-red-500", "dark:text-red-300");
+      break;
+
+    case "loading":
+      statusForm.classList.add("text-cyan-500", "dark:text-cyan-300");
+      break;
+
+    default:
+      statusForm.classList.add("text-muted");
+      break;
+  }
+
 }
 
 function isValidEmail(value) {
@@ -21,18 +57,18 @@ function markInvalid(el, invalid) {
 }
 
 if (form) {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault(); 
 
     const name = document.getElementById("name");
     const email = document.getElementById("email");
+    const topic = document.getElementById("topic");
     const message = document.getElementById("message");
+    const submitBtn = document.querySelector("button[type='submit']");
 
     const nameVal = name?.value.trim() || "";
     const emailVal = email?.value.trim() || "";
     const messageVal = message?.value.trim() || "";
-
-    let ok = true;
 
     const badName = nameVal.length < 2;
     const badEmail = !isValidEmail(emailVal);
@@ -42,24 +78,55 @@ if (form) {
     markInvalid(email, badEmail);
     markInvalid(message, badMessage);
 
-    ok = !badName && !badEmail && !badMessage;
-
-    if (!ok) {
-      setStatus("Revisa los campos marcados para continuar.");
+    if (badName || badEmail || badMessage) {
+      setStatus("error", "Revisa los campos para continuar.");
       return;
     }
 
-    setStatus("¡Listo! Mensaje preparado. (Placeholder sin backend).");
+    const formData = new FormData(form);
 
-    setTimeout(() => {
+    if (topic?.value) {
+      formData.set("motivo", topic.value);
+    }
+
+    try {
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.classList.add("opacity-70", "cursor-not-allowed");
+      }
+
+      setStatus("loading", "Enviando mensaje...");
+
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("No se pudo enviar el formulario.");
+      }
+
       form.reset();
       markInvalid(name, false);
       markInvalid(email, false);
       markInvalid(message, false);
-      setStatus("Gracias. Puedes continuar el contacto por email o LinkedIn.");
-    }, 1200);
+
+      setStatus("success", "Mensaje enviado correctamente.");
+    } catch (error) {
+      setStatus("error", "Ocurrió un error al enviar. Intenta nuevamente.");
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-70", "cursor-not-allowed");
+      }
+    }
+
   });
 }
+
 
 // Mobile menu 
 const mobileBtn = document.getElementById("mobileMenuBtn");

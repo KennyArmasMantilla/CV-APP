@@ -28,6 +28,16 @@
           "name": "SQL",
           "description": "Consultas, mantenimiento y trabajo con bases de datos relacionales.",
           "tags": ["Queries", "Optimización", "Relacional"]
+        },
+        {
+          "name": "VB.NET",
+          "description": "Desarrollo de aplicaciones empresariales y mantenimiento de sistemas heredados.",
+          "tags": ["VB.NET", "Enterprise", "Legacy"]
+        },
+        {
+          "name": "C#",
+          "description": "Desarrollo de aplicaciones web con ASP.NET y soporte a sistemas corporativos.",
+          "tags": ["C#", "ASP.NET", "Web API"]
         }
       ]
     },

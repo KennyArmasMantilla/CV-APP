@@ -12,7 +12,7 @@
         "summary": "Desarrollo frontend en banca digital para la gestión de solicitudes de préstamos hipotecarios usando Angular, RxJS, Web Components y GraphQL.",
         "description": "Desarrollo de aplicaciones frontend en entornos de banca digital utilizando Angular 9 y 12. Implementación de flujos reactivos con RxJS, manejo de estados complejos, construcción y reutilización de Web Components internos, desarrollo de interfaces basadas en Figma, consumo de servicios backend mediante GraphQL, optimización del rendimiento con Lazy Loading y ngOnChanges, y trabajo colaborativo bajo metodologías ágiles.",
         "tech": ["Angular 9", "Angular 12", "RxJS", "Web Components", "GraphQL", "Figma", "Lazy Loading", "ngOnChanges", "Scrum"],
-        "image": "/experience/ntt-interbank.jpg",
+        "image": "/experience/ntt-interbank.png",
         "badge": "NTT DATA · Actualidad"
       }    
     ]
@@ -30,7 +30,7 @@
         "summary": "Desarrollo web para un proyecto de análisis de proyectos con IA, con implementación de mejoras técnicas, control de calidad y despliegue a producción.",
         "description": "Encargado del desarrollo web del proyecto de análisis de proyectos con IA. Uso de Angular 18, Figma, Tailwind 4, Git y GitLab. Implementación de soluciones técnicas, mejoramiento de código, control de calidad con Sonar y soporte para incorporación a producción.",
         "tech": ["Angular 18", "Figma", "Tailwind 4", "Git", "GitLab", "Sonar"],
-        "image": "/experience/ntt-coda.jpg",
+        "image": "/experience/ntt-coda.png",
         "badge": "NTT DATA · 2025"
       }      
     ]
@@ -66,7 +66,7 @@
         "summary": "Gestión y mejora de sistemas de asistencia y viáticos, desarrollo de aplicaciones empresariales e integración con APIs y librerías externas.",
         "description": "Gestión y mejora de sistemas de control de asistencia y viáticos. Desarrollo de aplicaciones empresariales con ASP.NET MVC, ASP.NET Web API y VB.NET. Implementación de interfaces web con Angular 12 y Bootstrap, uso de pruebas unitarias, integración de librerías y APIs como Dropbox y DevExpress, y trabajo con IBM DB2, SQL Server y conexiones OLEDB.",
         "tech": ["ASP.NET MVC", "ASP.NET Web API", "VB.NET", "Angular 12", "Bootstrap", "Dropbox API", "DevExpress", "IBM DB2", "SQL Server", "OLEDB"],
-        "image": "/experience/segurindustria.jpg",
+        "image": "/experience/segurindustria.png",
         "badge": "Segurindustria S.A"
       }
     ]

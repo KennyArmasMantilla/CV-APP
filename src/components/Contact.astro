@@ -46,11 +46,13 @@
 
     <div class="card-surface p-6 lg:pl-12">
       <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        Envíame un mensaje (sin backend)
+        Envíame un mensaje
       </h3>
 
       <form
         id="contactForm"
+        action="https://formspree.io/f/mjgdevjj"
+        method="POST"
         class="mt-5 space-y-4"
         aria-label="Formulario de contacto"
         novalidate
@@ -138,8 +140,7 @@
             </svg>
           </button>
 
-          <p id="formStatus" class="text-sm text-muted" aria-live="polite">
-            Respuesta automática (placeholder) al enviar.
+          <p id="formStatus" class="hidden text-sm" aria-live="polite">
           </p>
         </div>
       </form>

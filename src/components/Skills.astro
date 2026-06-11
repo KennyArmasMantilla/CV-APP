@@ -1,9 +1,8 @@
-
 ---
 import skillsData from '../data/skills.json';
 ---
 
-<section id="skill"
+<section id="skills"
   class="scroll-mt-24 border-t border-black/10 py-14 dark:border-white/10 sm:py-18"
   aria-label="Habilidades tècnicas"
   data-skills-root>
@@ -45,24 +44,24 @@ import skillsData from '../data/skills.json';
           <span class="relative z-10 inline-flex items-center gap-2">
             {category.icon === "codeLanguages" && (
               <svg aria-hidden="true" class="h-5 w-5 fill-none stroke-current" stroke-width="2">
-                <use xlink:href="../public/assets/sprite.svg#codeLanguages"></use>
+                <use xlink:href="../assets/sprite.svg#codeLanguages"></use>
               </svg>
             )}
             {category.icon === "globe" && (
               <svg aria-hidden="true" class="h-5 w-5 fill-none stroke-current" stroke-width="2">
-                <use xlink:href="../public/assets/sprite.svg#globe"></use>
+                <use xlink:href="../assets/sprite.svg#globe"></use>
               </svg>
             )}
 
             {category.icon === "database" && (
               <svg aria-hidden="true" class="h-5 w-5 fill-none stroke-current" stroke-width="2">
-                <use xlink:href="../public/assets/sprite.svg#database"></use>
+                <use xlink:href="../assets/sprite.svg#database"></use>
               </svg>
             )}
 
             {category.icon === "boxes" && (
               <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="2">
-                <use xlink:href="../public/assets/sprite.svg#boxes"></use>
+                <use xlink:href="../assets/sprite.svg#boxes"></use>
               </svg>
             )}
             <span>{category.title}</span>
